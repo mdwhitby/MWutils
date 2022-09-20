@@ -1,6 +1,5 @@
 
 getESRItoken <- function(username, secret) {
-  require(httr)
 
   token <-
     httr::POST(
@@ -16,6 +15,6 @@ getESRItoken <- function(username, secret) {
       )
     )
 
-  return(content(token)$token)
+  return(httr::content(token)$token)
 
 }
