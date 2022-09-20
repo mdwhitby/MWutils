@@ -1,6 +1,13 @@
-#' Custom Knit function for RStudio
+
+#' custom knit function
 #'
+#' @param input
+#' @param ...
+#'
+#' @return
 #' @export
+#'
+#' @examples
 knit_with_date <- function(input, ...) {
   rmarkdown::render(
     input,
