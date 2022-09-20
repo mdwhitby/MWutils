@@ -20,3 +20,12 @@ knit_with_date <- function(input,
     envir = globalenv()
   )
 }
+
+
+initCL <- function(pcnt=0.75){
+  library(parallel)
+  library(pbapply)
+
+  cl <<- makeCluster(pcnt*detectCores())
+
+}
