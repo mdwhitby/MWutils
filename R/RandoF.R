@@ -22,6 +22,14 @@ knit_with_date <- function(input,
 }
 
 
+#' Prepare for parallel processing Quickly
+#'
+#' @param pcnt percent of cores to use
+#'
+#' @return
+#' @export
+#'
+#' @examples
 initCL <- function(pcnt=0.75){
   library(parallel)
   library(pbapply)

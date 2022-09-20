@@ -4,7 +4,7 @@
 \alias{knit_with_date}
 \title{custom knit function}
 \usage{
-knit_with_date(input, ...)
+knit_with_date(input, output_dir = paste0(here::here(), "/Reports"), ...)
 }
 \arguments{
 \item{...}{}
