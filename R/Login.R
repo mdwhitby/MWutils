@@ -1,5 +1,7 @@
 
 getESRItoken <- function(username, secret) {
+  require(httr)
+
   token <-
     httr::POST(
       url = "https://www.arcgis.com/sharing/rest/generateToken",
@@ -13,7 +15,7 @@ getESRItoken <- function(username, secret) {
         expiration = 60
       )
     )
-  
+
   return(content(token)$token)
-  
+
 }
