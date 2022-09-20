@@ -1,36 +1,38 @@
-#' NotifyMe via email (use email version of phone for text)
+#' Send an email (use phone number email to receieve a text)
 #'
-#' @param sub subject
-#' @param mes mesage text
-#' @param whofrom message sent by - can use a function of process to help understand what part is done
-#' @param to email address of recipient
-#' @param username username for login to outgoing mail
-#' @param secret password for login to outgoing mail
-#' @param host host address for outgoing mail
+#' @param message
+#' @param mail_from
+#' @param mail_rcpt
+#' @param smtp_server
+#' @param use_ssl
+#' @param Username
+#' @param Password
+#' @param ...
 #'
 #' @return
 #' @export
 #'
 #' @examples
-notifyMe <- function(sub,
-                   mes,
-                   whofrom,
-                   to = c("Michael <6099230973@vtext.com>"),
-                   username="rmail@keepeverycog.com",
-                   secret,
-                   host = "mail.keepeverycog.com"){
+#'
+notifyMe <- function(message = 'msg from R',
+                     mail_from = "rmail@keepeverycog.com",
+                     mail_rcpt = '6099230973@vtext.com',
+                     smtp_server = "mail.keepeverycog.com:465",
+                     use_ssl = "force",
+                     Username = "rmail@keepeverycog.com",
+                     Password = keyring::key_get('RMail_KEC', username = 'rmail@keepeverycog.com'),
+                     ...
+                     ) {
 
-  require(mailR)
+  curl::send_mail(
+    mail_from = mail_from,
+    mail_rcpt = mail_rcpt,
+    message = message,
+    smtp_server=smtp_server,
+    use_ssl=use_ssl,
+    Username = Username,
+    Password = Password,
+    ...
+  )
 
-  send.mail(from = whofrom,
-            to = to,
-            subject = sub,
-            body = mes,
-            smtp = list(host.name = howt,
-                        port = 26,
-                        user.name = username,
-                        passwd=secret),
-            authenticate = TRUE,
-            send = TRUE)
-            }
-
+}

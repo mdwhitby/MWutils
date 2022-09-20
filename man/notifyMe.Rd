@@ -2,36 +2,25 @@
 % Please edit documentation in R/NotifyME.R
 \name{notifyMe}
 \alias{notifyMe}
-\title{NotifyMe via email (use email version of phone for text)}
+\title{Send an email (use phone number email to receieve a text)}
 \usage{
 notifyMe(
-  sub,
-  mes,
-  whofrom,
-  to = c("Michael <6099230973@vtext.com>"),
-  username = "rmail@keepeverycog.com",
-  secret,
-  host = "mail.keepeverycog.com"
+  message = "msg from R",
+  mail_from = "rmail@keepeverycog.com",
+  mail_rcpt = "6099230973@vtext.com",
+  smtp_server = "mail.keepeverycog.com:465",
+  use_ssl = "force",
+  Username = "rmail@keepeverycog.com",
+  Password = keyring::key_get("RMail_KEC", username = "rmail@keepeverycog.com"),
+  ...
 )
 }
 \arguments{
-\item{sub}{subject}
-
-\item{mes}{mesage text}
-
-\item{whofrom}{message sent by - can use a function of process to help understand what part is done}
-
-\item{to}{email address of recipient}
-
-\item{username}{username for login to outgoing mail}
-
-\item{secret}{password for login to outgoing mail}
-
-\item{host}{host address for outgoing mail}
+\item{...}{}
 }
 \value{
 
 }
 \description{
-NotifyMe via email (use email version of phone for text)
+Send an email (use phone number email to receieve a text)
 }
