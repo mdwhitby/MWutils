@@ -24,3 +24,6 @@ notifyMe(
 \description{
 Send an email (use phone number email to receieve a text)
 }
+\examples{
+
+}
