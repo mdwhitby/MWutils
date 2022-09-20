@@ -18,12 +18,6 @@ notifyMe(
 \arguments{
 \item{...}{}
 }
-\value{
-
-}
 \description{
 Send an email (use phone number email to receieve a text)
-}
-\examples{
-
 }

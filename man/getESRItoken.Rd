@@ -11,9 +11,6 @@ getESRItoken(username, secret)
 
 \item{secret}{string of password}
 }
-\value{
-
-}
 \description{
 get ESRI arcgis online REST token
 }
