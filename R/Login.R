@@ -1,4 +1,13 @@
 
+#' get ESRI arcgis online REST token
+#'
+#' @param username string of username
+#' @param secret string of password
+#'
+#' @return
+#' @export
+#'
+#' @examples
 getESRItoken <- function(username, secret) {
 
   token <-
