@@ -14,20 +14,9 @@ knit_with_date <- function(input,
   rmarkdown::render(
     input,
     output_file = paste0(
-      xfun::sans_ext(input), '-', format(Sys.Date(), "%Y%m%d"), '.'
+      xfun::sans_ext(input), '-', format(Sys.Date(), "%Y%m%d")
     ),
     output_dir =output_dir,
     envir = globalenv()
   )
-}
-
-
-#' auto Table Numbers in Markdown
-#'
-#' @return
-#' @export
-#'
-#' @examples
-tabN <- function() {
-  tNum <<- tNum+1
 }
