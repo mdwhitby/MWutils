@@ -9,7 +9,7 @@
 #'
 #' @examples
 knit_with_date <- function(input,
-                           output_dir=paste0(here::here(), '/Reports'),
+                           output_dir='C:/Users/mwhitby/Documents/render',#paste0(here::here(), '/Reports'),
                            build_dir='C:/Users/mwhitby/Documents/render',
                            ...) {
   rmarkdown::render(
