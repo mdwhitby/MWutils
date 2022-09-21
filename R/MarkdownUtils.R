@@ -18,6 +18,7 @@ knit_with_date <- function(input,
     ),
     output_dir =output_dir,
     intermediates_dir = output_dir,
+    knit_root_dir = output_dir,
     envir = globalenv()
   )
 }
